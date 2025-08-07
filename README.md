@@ -33,7 +33,6 @@ CV Builder adalah aplikasi web berbasis Django yang memungkinkan pengguna membua
    ```bash
    git clone https://github.com/fqhtmpt/cv-builder.git
    cd cv-builder
-````
 
 2. **Aktifkan virtual environment:**
 
