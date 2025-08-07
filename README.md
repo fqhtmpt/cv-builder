@@ -40,13 +40,13 @@ CV Builder adalah aplikasi web berbasis Django yang memungkinkan pengguna membua
    ```bash
    python -m venv venv
    venv\Scripts\activate      # Windows
-   ```
+   ````
 
 3. **Install dependencies:**
 
    ```bash
    pip install -r requirements.txt
-   ```
+   ````
 
 4. **Jalankan server Django:**
 
