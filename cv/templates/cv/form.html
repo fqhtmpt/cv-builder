@@ -1,0 +1,38 @@
+{% extends 'cv/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Buat CV Baru</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <h5>Data Pribadi</h5>
+                    <div class="mb-3">{{ form.nama.label_tag }}{{ form.nama }}</div>
+                    <div class="mb-3">{{ form.email.label_tag }}{{ form.email }}</div>
+                    <div class="mb-3">{{ form.nomor_hp.label_tag }}{{ form.nomor_hp }}</div>
+                    <div class="mb-3">{{ form.alamat.label_tag }}{{ form.alamat }}</div>
+                    
+                    <h5>Pendidikan</h5>
+                    <div class="mb-3">{{ form.pendidikan.label_tag }}{{ form.pendidikan }}</div>
+                    
+                    <h5>Pengalaman Kerja</h5>
+                    <div class="mb-3">{{ form.pengalaman.label_tag }}{{ form.pengalaman }}</div>
+                    
+                    <h5>Keterampilan</h5>
+                    <div class="mb-3">{{ form.keterampilan.label_tag }}{{ form.keterampilan }}</div>
+                    
+                    <h5>Sertifikasi (Opsional)</h5>
+                    <div class="mb-3">{{ form.sertifikasi.label_tag }}{{ form.sertifikasi }}</div>
+                    
+                    <button type="submit" class="btn btn-primary">Buat CV</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

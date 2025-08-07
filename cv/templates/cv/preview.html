@@ -1,0 +1,65 @@
+{% extends 'cv/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card" id="cv-content">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <h2>{{ cv.nama }}</h2>
+                    <p class="mb-0">{{ cv.email }} | {{ cv.nomor_hp }}</p>
+                    <p class="text-muted">{{ cv.alamat }}</p>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="border-bottom pb-2">PENDIDIKAN</h4>
+                    <p style="white-space: pre-line;">{{ cv.pendidikan }}</p>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="border-bottom pb-2">PENGALAMAN KERJA</h4>
+                    <p style="white-space: pre-line;">{{ cv.pengalaman }}</p>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="border-bottom pb-2">KETERAMPILAN</h4>
+                    <p style="white-space: pre-line;">{{ cv.keterampilan }}</p>
+                </div>
+                
+                {% if cv.sertifikasi %}
+                <div class="mb-4">
+                    <h4 class="border-bottom pb-2">SERTIFIKASI</h4>
+                    <p style="white-space: pre-line;">{{ cv.sertifikasi }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Actions</h5>
+                <a href="{% url 'cv_export_pdf' cv.id %}" class="btn btn-success btn-block mb-2">
+                    📄 Download as PDF
+                </a>
+                <a href="{% url 'cv_form' %}" class="btn btn-secondary btn-block">
+                    📝 Buat CV Baru
+                </a>
+                <hr>
+                <button onclick="window.print()" class="btn btn-info btn-block">
+                    🖨️ Print CV
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@media print {
+    .col-md-4 { display: none; }
+    .col-md-8 { width: 100%; }
+    .card { border: none; box-shadow: none; }
+}
+</style>
+{% endblock %}
